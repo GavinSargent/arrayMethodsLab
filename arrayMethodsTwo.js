@@ -10,7 +10,11 @@ let numbers = [40, 68, 14, 90, 49];
 */
 
 // CODE HERE
-
+const dividedNumsArray = []
+const numDivideByTwo = numbers.forEach((element, i) => {
+  return dividedNumsArray.push(element / 2)
+})
+// console.log(dividedNumsArray)
 
 ////////// PROBLEM 2 //////////
 
@@ -24,6 +28,10 @@ let numbers = [40, 68, 14, 90, 49];
 
 // CODE HERE
 
+const numDivideByTwoArr = numbers.map((element) => {
+  return element / 2
+})
+// console.log(numDivideByTwoArr)
 
 ////////// PROBLEM 3 //////////
 
@@ -51,6 +59,10 @@ let cities = [
 
 // CODE HERE
 
+const citiesEndingInI = cities.filter((city)=>{
+  return city.endsWith("i")
+})
+// console.log(citiesEndingInI)
 
 ////////// PROBLEM 4 //////////
 
@@ -87,8 +99,22 @@ let fruits = [
 
 // CODE HERE
 
-
-
+// const orangeOrApple = fruits.forEach((fruit,index)=> {
+//   if(fruit.color === "red"){
+//     console.log(`The fruit with index ${index} is an apple.`)
+//   } else if (fruit.color === "orange"){
+//     console.log(`The fruit with index ${index} is an orange.`)
+//   } else {
+//     console.log(`The fruit with index ${index} is neither apple or orange.`)
+//   }
+//   }
+// )
+const orangeOrApple = fruits.forEach((fruit,index)=> {
+  return fruit.color === "red" ? console.log(`The fruit with index ${index} is an apple.`):
+  fruit.color === "orange" ? console.log(`The fruit with index ${index} is an orange.`):
+  console.log(`The fruit with index ${index} is neither apple or orange.`);
+  }
+)
 /* 
     Run the code in node to see the result. Then, copy and paste the result below.
 
@@ -100,8 +126,12 @@ let fruits = [
 */
 
 // COPY AND PASTE THE RESULT FROM YOUR CONSOLE (NODE CONSOLE IS YOUR TERMINAL) HERE (AS A MULTI LINES COMMENT)
-
-
+/*
+The fruit with index 0 is neither apple or orange.
+The fruit with index 1 is an orange.
+The fruit with index 2 is neither apple or orange.
+The fruit with index 3 is an apple.
+*/
 
 ////////// PROBLEM 5 //////////
 
@@ -133,7 +163,7 @@ let foods = [
     tags: ["meat", "rice"],
   },
   {
-    name: "kalua pork rice",
+    name: "kalua pork",
     price: 10,
     tags: ["meat", "rice"],
   },
@@ -145,7 +175,14 @@ let foods = [
 */
 
 // CODE HERE
+const containsRice = foods.filter((food, index, array)=>{
+  return food.tags.includes("rice")
+}).reduce((acc, cur)=> acc + cur.price, 0)
 
+// const riceTotal = containsRice.reduce((acc, cur)=>{
+//   return acc + cur.price
+// },0)
 
+console.log(containsRice)
 // THE TOTAL
-
+// 36
